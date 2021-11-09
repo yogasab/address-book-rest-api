@@ -22,7 +22,7 @@ class ContactResource extends JsonResource
       'phone' => $this->phone,
       'notes' => $this->notes,
       'created_at' => $this->created_at->diffForHumans(),
-      'labels' => LabelResource::collection($this->labels)
+      'labels' => $this->labels->count() ? LabelResource::collection($this->labels) : "There are no labels yet"
     ];
   }
 }

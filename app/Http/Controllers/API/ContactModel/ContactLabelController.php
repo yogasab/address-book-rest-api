@@ -48,7 +48,7 @@ class ContactLabelController extends Controller
     $contactLabel->contact_id = $contact->id;
     $contactLabel->label_id = $label->id;
     $contactLabel->save();
-    return $contactLabel;
+    return response()->json(['message' => 'New label successfully added to contact']);
   }
 
   /**
